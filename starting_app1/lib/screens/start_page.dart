@@ -18,20 +18,20 @@ class _MyFirstAppState extends State<MyFirstApp> {
   @override
   Widget build(BuildContext context) {
     // ignore: no_leading_underscores_for_local_identifiers
-    const List<Widget> _pages = <Widget>[
-      Icon(
-        Icons.call,
-        size: 150,
-      ),
-      Icon(
-        Icons.camera,
-        size: 150,
-      ),
-      Icon(
-        Icons.chat,
-        size: 150,
-      ),
-    ];
+    // const List<Widget> _pages = <Widget>[
+    //   Icon(
+    //     Icons.call,
+    //     size: 150,
+    //   ),
+    //   Icon(
+    //     Icons.camera,
+    //     size: 150,
+    //   ),
+    //   Icon(
+    //     Icons.chat,
+    //     size: 150,
+    //   ),
+    // ];
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -96,8 +96,9 @@ class _MyFirstAppState extends State<MyFirstApp> {
           onTap: _onItemTapped,
           // backgroundColor: Colors.grey[800], 
         ),
-        body: Center(
-          child: _pages.elementAt(_selectedIndex), //New
+        body: Container(
+              
+
         ),
       ),
     );
