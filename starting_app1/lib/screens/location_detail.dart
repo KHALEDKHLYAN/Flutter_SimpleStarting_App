@@ -47,23 +47,27 @@ class LocationDetail extends StatelessWidget {
 
   Widget sectionTitle(String text) {
     return Container(
-      padding: EdgeInsets.fromLTRB(20.0, 10.0, 25.0, 10.0),
+      padding: EdgeInsets.fromLTRB(25.0, 25.0, 25.0, 10.0),
       child: Text(
         text,
         textAlign: TextAlign.left,
-        style: const TextStyle(fontSize: 20.0, color: Colors.black),
+        style: const TextStyle(fontSize: 25.0, color: Colors.black, fontWeight: FontWeight.bold),
       ),
     );
   }
 
   Widget sectionText(String text) {
     return Container(
-        padding: EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 10.0),
-        child: Text(text));
+      padding: EdgeInsets.fromLTRB(25.0, 25.0, 25.0, 10.0),
+      child: Text(
+        text,
+      ),
+    );
   }
 
   Widget bannerIange(String url, double height) {
     return Container(
+      constraints: BoxConstraints.tightFor(height: height),
       child: Image.network(url, fit: BoxFit.fitWidth),
     );
   }
