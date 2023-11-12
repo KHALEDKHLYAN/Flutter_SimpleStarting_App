@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:starting_app1/screens/start_page.dart';
+import 'package:starting_app1/mock/mock_location.dart';
+import 'package:starting_app1/models/location.dart';
+import 'package:starting_app1/screens/location_detail.dart';
 
 void main() {
-  runApp(const MyApp());
+
+  final Location mockLocation = MockLocation.FetchAny();
+  return runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: LocationDetail(mockLocation),
+  ));
 }
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
-      home: const MyFirstApp(),
-    );
-  }}

@@ -96,10 +96,13 @@ class _MyFirstAppState extends State<MyFirstApp> {
           onTap: _onItemTapped,
           // backgroundColor: Colors.grey[800], 
         ),
-        body: Container(
+        // body: const Column(
+        //   children: [
+        //     LocationDetail(),
+        //   ]
               
 
-        ),
+        // ),
       ),
     );
   }
