@@ -18,15 +18,24 @@ class LocationDetail extends StatelessWidget {
         title: Text(location.name),
         backgroundColor: Colors.blue,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: renderFacts(location),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: renderBody(context, location),
+        ),
       ),
     );
   }
 
-  List<Widget> renderFacts(Location location) {
+  List<Widget> renderBody(BuildContext context, Location location) {
+    var results = <Widget>[];
+    results.add(bannerIange(location.url, 170.0));
+    results.addAll(renderFacts(context, location));
+    return results;
+  }
+
+  List<Widget> renderFacts(BuildContext context, Location location) {
     var results = <Widget>[];
 
     for (int i = 0; i < location.facts.length; i++) {
@@ -38,11 +47,11 @@ class LocationDetail extends StatelessWidget {
 
   Widget sectionTitle(String text) {
     return Container(
-      padding: EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 10.0),
+      padding: EdgeInsets.fromLTRB(20.0, 10.0, 25.0, 10.0),
       child: Text(
         text,
         textAlign: TextAlign.left,
-        style: TextStyle(fontSize: 24.0,color: Colors.black),
+        style: const TextStyle(fontSize: 20.0, color: Colors.black),
       ),
     );
   }
@@ -51,5 +60,11 @@ class LocationDetail extends StatelessWidget {
     return Container(
         padding: EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 10.0),
         child: Text(text));
+  }
+
+  Widget bannerIange(String url, double height) {
+    return Container(
+      child: Image.network(url, fit: BoxFit.fitWidth),
+    );
   }
 }
