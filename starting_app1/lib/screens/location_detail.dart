@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:starting_app1/models/location.dart';
+import 'package:starting_app1/styless.dart';
 
 // ignore: use_key_in_widget_constructors
 class LocationDetail extends StatelessWidget {
@@ -15,7 +16,7 @@ class LocationDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(location.name),
+        title: Text(location.name, style: Styles.navBarTitle),
         backgroundColor: Colors.blue,
       ),
       body: SingleChildScrollView(
@@ -51,7 +52,7 @@ class LocationDetail extends StatelessWidget {
       child: Text(
         text,
         textAlign: TextAlign.left,
-        style: const TextStyle(fontSize: 25.0, color: Colors.black, fontWeight: FontWeight.bold),
+        style: Styles.headerLarge,
       ),
     );
   }
@@ -61,6 +62,7 @@ class LocationDetail extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(25.0, 25.0, 25.0, 10.0),
       child: Text(
         text,
+        style: Styles.textDefault,
       ),
     );
   }

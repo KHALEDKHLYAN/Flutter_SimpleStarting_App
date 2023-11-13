@@ -1,31 +1,83 @@
-// ignore_for_file: non_constant_identifier_names
+import '../models/location.dart';
+import '../models/location_fact.dart';
 
-import 'package:starting_app1/models/location.dart';
-import 'package:starting_app1/models/location_fact.dart';
-
-class MockLocation extends Location {
-  MockLocation({required super.name, required super.url, required super.facts});
-
-  static Location FetchAny() {
-    return Location(
-        name: 'Location DetailApp',
-        url: 'https://i.pinimg.com/736x/26/9d/f6/269df64ca75937785a67b507eabdbcb2.jpg',
+mixin MockLocation implements Location {
+  static final List<Location> items = [
+    Location(
+        name: 'Arashiyama Bamboo Grove',
+        url:
+            'https://cdn-images-1.medium.com/max/2000/1*vdJuSUKWl_SA9Lp-32ebnA.jpeg',
         facts: <LocationFact>[
           LocationFact(
-            title: 'Summary',
-            text:
-                '''DON/’T use a leading underscore for identifiers that aren’t private. 
-          Dart uses a leading underscore in an identifier to mark members and top-level
-           declarations as private. This trains users to associate a leading underscore with one of those kinds of declarations. They see _ and think “private”.
-           There is no concept of ''',
-          ),
+              title: 'Summary',
+              text:
+                  'While we could go on about the ethereal glow and seemingly endless heights of this bamboo grove on the outskirts of Kyoto, the sight\'s pleasures extend beyond the visual realm'),
           LocationFact(
-            title: 'Summary',
-            text:
-                '''DON/’T use a leading underscore for identifiers that aren’t private. 
-          Dart uses a leading underscore in an identifier to mark members and top-level
-           declarations as private.''',
-          ),
-        ]);
+              title: 'How to Get There',
+              text:
+                  'Kyoto airport, with several terminals, is located 16 kilometres south of the city and is also known as Kyoto. Kyoto can also be reached by transport links from other regional airports.')
+        ]),
+    Location(
+        name: 'Mount Fuji',
+        url:
+            'https://img3.goodfon.ru/original/1920x1080/a/a5/fuji-peizazh-iaponiia-gora-tsvety-nebo.jpg',
+        facts: <LocationFact>[
+          LocationFact(
+              title: 'Summary',
+              text:
+                  'While we could go on about the ethereal glow and seemingly endless heights of this bamboo grove on the outskirts of Kyoto, the sight\'s pleasures extend beyond the visual realm'),
+          LocationFact(
+              title: 'How to Get There',
+              text:
+                  'Kyoto airport, with several terminals, is located 16 kilometres south of the city and is also known as Kyoto. Kyoto can also be reached by transport links from other regional airports.')
+        ]),
+    Location(
+        name: 'Kiyomizu-dera',
+        url:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Kiyomizu-dera_in_Kyoto-r.jpg/800px-Kiyomizu-dera_in_Kyoto-r.jpg',
+        facts: <LocationFact>[
+          LocationFact(
+              title: 'Summary',
+              text:
+                  'While we could go on about the ethereal glow and seemingly endless heights of this bamboo grove on the outskirts of Kyoto, the sight\'s pleasures extend beyond the visual realm'),
+          LocationFact(
+              title: 'How to Get There',
+              text:
+                  'Kyoto airport, with several terminals, is located 16 kilometres south of the city and is also known as Kyoto. Kyoto can also be reached by transport links from other regional airports.')
+        ]),
+    Location(
+        name: 'Kinkaku-ji',
+        url:
+            'https://www.asisbiz.com/Japan/Kinkaku-ji/images/0-Postcards-Kinkaku-ji-Winter.jpg',
+        facts: <LocationFact>[
+          LocationFact(
+              title: 'Summary',
+              text:
+                  'While we could go on about the ethereal glow and seemingly endless heights of this bamboo grove on the outskirts of Kyoto, the sight\'s pleasures extend beyond the visual realm'),
+          LocationFact(
+              title: 'How to Get There',
+              text:
+                  'Kyoto airport, with several terminals, is located 16 kilometres south of the city and is also known as Kyoto. Kyoto can also be reached by transport links from other regional airports.')
+        ]),
+    Location(
+        name: 'Odaiba',
+        url: 'https://www.yhunter.ru/wp-content/uploads/2015/06/DSC1876.jpg',
+        facts: <LocationFact>[
+          LocationFact(
+              title: 'Summary',
+              text:
+                  'While we could go on about the ethereal glow and seemingly endless heights of this bamboo grove on the outskirts of Kyoto, the sight\'s pleasures extend beyond the visual realm'),
+          LocationFact(
+              title: 'How to Get There',
+              text:
+                  'Kyoto airport, with several terminals, is located 16 kilometres south of the city and is also known as Kyoto. Kyoto can also be reached by transport links from other regional airports.')
+        ]),
+  ];
+  static Location fetchAny() {
+    return items[0];
+  }
+
+  static List<Location> fetchAll() {
+    return items;
   }
 }
