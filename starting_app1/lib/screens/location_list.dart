@@ -7,7 +7,6 @@ class LocationList extends StatelessWidget {
 
   LocationList(this.locations);
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,8 +15,35 @@ class LocationList extends StatelessWidget {
           'Location List',
           style: Styles.navBarTitle,
         ),
+        backgroundColor: Colors.blue,
       ),
-      body:Container(),
+      body: ListView.builder(
+        itemCount: locations.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            contentPadding: EdgeInsets.all(10),
+            leading: itemThumbnail(locations[index]),
+            title: itemTitle(locations[index]),
+          );
+        },
+      ),
+    );
+  }
+
+  Widget itemThumbnail(Location location) {
+    return Container(
+      constraints: BoxConstraints.tightFor(width: 100.0),
+      child: Image.network(
+        location.url,
+        fit: BoxFit.fitHeight,
+      ),
+    );
+  }
+
+  Widget itemTitle(Location location) {
+    return Text(
+      location.name,
+      style: Styles.textDefault,
     );
   }
 }
