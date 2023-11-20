@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:starting_app1/models/location.dart';
-import 'package:starting_app1/styless.dart';
+import 'package:starting_app1/styles.dart';
 import 'location_detail.dart';
+
 
 class LocationList extends StatelessWidget {
   final List<Location> _locations;

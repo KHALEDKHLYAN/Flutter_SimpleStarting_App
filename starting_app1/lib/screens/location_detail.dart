@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:starting_app1/models/location.dart';
-import 'package:starting_app1/styless.dart';
+import 'package:starting_app1/styles.dart';
 
 // ignore: use_key_in_widget_constructors
 class LocationDetail extends StatelessWidget {
