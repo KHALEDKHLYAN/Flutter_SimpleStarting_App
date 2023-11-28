@@ -4,7 +4,7 @@ import '../models/location_fact.dart';
 mixin MockLocation implements Location {
   static final List<Location> items = [
     Location(
-        name: 'Arashiyama Bamboo Grove',
+        name: 'Arashiyama Bamboo Grove',  
         url:
             'https://cdn-images-1.medium.com/max/2000/1*vdJuSUKWl_SA9Lp-32ebnA.jpeg',
         facts: <LocationFact>[
